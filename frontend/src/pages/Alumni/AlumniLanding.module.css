@@ -1,0 +1,192 @@
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  animation: fadeIn var(--transition-slow);
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 2rem;
+  padding-bottom: 6rem;
+}
+
+.cardWrapper {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2.25rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--border-color);
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.deleteButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--bg-body);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  opacity: 0;
+}
+
+.cardWrapper:hover .deleteButton {
+  opacity: 1;
+}
+
+.deleteButton:hover {
+  background-color: var(--danger-color);
+  color: white;
+  border-color: var(--danger-color);
+  transform: scale(1.1);
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  opacity: 0.9;
+}
+
+.card::after {
+  content: 'Batch';
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+  background-color: white;
+}
+
+.card:hover::after {
+  color: var(--accent-color);
+}
+
+.floatingButton {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  cursor: pointer;
+  transition: var(--transition-base);
+  z-index: 100;
+}
+
+.floatingButton:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Modal Styles */
+.modalInput {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  background-color: var(--bg-body);
+  transition: var(--transition-base);
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  background-color: white;
+}
+
+.modalButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+  transition: var(--transition-base);
+  font-size: 1rem;
+}
+
+.modalButton:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.errorMessage {
+  color: var(--danger-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}

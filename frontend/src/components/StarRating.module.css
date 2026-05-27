@@ -1,0 +1,15 @@
+.starRatingContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    color: #fbbf24; /* Amber 400 */
+}
+
+.star {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.05));
+}
+
+.emptyStar {
+    color: #e2e8f0; /* Slate 200 */
+}
